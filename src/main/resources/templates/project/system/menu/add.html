@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<head th:include="include::header">
+</head>
+<body>
+	<div class="layui-fluid">
+		<div class="layui-card">
+			<div class="layui-card-body">
+				<form class="layui-form" action="" lay-filter="signupForm">
+					<input id="parentId" name="parentId" type="hidden" th:value="${pId}">
+					<input name="parentIds" type="hidden" th:value="${parentIds}">
+					<input name="isParent" type="hidden" th:value="${pIsParent}">
+					<div class="layui-form-item">
+						<label class="layui-form-label" th:text="#{sys.menu.edit.parentMenu}+'：'">上级菜单：</label>
+						<div class="layui-input-block">
+							<input name="" class="layui-input layui-btn-disabled" type="text" th:value="${pName}" readonly>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">
+							<span style="color: red">*</span>
+							<forn th:text="#{sys.menu.edit.menuType}+'：'">菜单类型：</forn>
+						</label>
+						<div class="layui-input-block">
+							<input type="radio" name="type" value="0"  th:title="#{sys.menu.list.type.catalog}">
+							<input type="radio" name="type" value="1" th:title="#{sys.menu.list.type.menu}">
+							<input type="radio" name="type"value="2" th:title="#{sys.menu.list.type.btn}">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">
+							<span style="color: red">*</span>
+							<forn th:text="#{sys.menu.edit.menuName}+'：'">菜单名称：</forn>
+						</label>
+						<div class="layui-input-block">
+							<input id="name" name="name" class="layui-input" type="text">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">
+							<span style="color: red">*</span>
+							<forn th:text="#{sys.menu.list.nameUs}+'：'">英文名称：</forn>
+						</label>
+						<div class="layui-input-block">
+							<input id="nameUs" name="nameUs" class="layui-input" type="text">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">
+							<span style="color: red">*</span>
+							<forn th:text="#{sys.menu.list.address}+'：'">链接地址：</forn>
+						</label>
+						<div class="layui-input-block">
+							<input id="url" name="url" class="layui-input" type="text">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">
+							<span style="color: red">*</span>
+							<forn th:text="#{sys.menu.list.permission}+'：'">权限标识：</forn>
+						</label>
+						<div class="layui-input-block">
+							<input id="perms" name="perms" class="layui-input" type="text">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">
+							<span style="color: red">*</span>
+							<forn th:text="#{sys.menu.edit.sort.number}+'：'">排序号：</forn>
+						</label>
+						<div class="layui-input-block">
+							<input id="sort" name="sort" class="layui-input" th:value="${pSort}" type="text">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">
+							<span style="color: red">*</span>
+							<forn th:text="#{sys.menu.list.icon}+'：'">图标：</forn>
+						</label>
+						<div class="layui-input-block">
+							<input id="icon" name="icon" lay-active="icon" class="layui-input" type="text" th:placeholder="#{sys.menu.edit.selectIcon.hint}">
+						</div>
+					</div>
+					<div class="layui-form-item layui-layout-admin">
+						<div class="layui-input-block">
+							<div class="layui-footer" style="left: 0;">
+								<button class="layui-btn" lay-submit lay-filter="submitForm" th:text="#{button.submit.now}">立即提交</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div th:include="include::i18n-common"></div>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript" src="/js/project/system/menu/add.js"></script>
+
+	<script th:inline="javascript">
+        var iconList_i18n = [[#{sys.menu.edit.selectIcon.win.title}]];//图标列表
+        var input_menuName_i18n = [[#{sys.menu.edit.input.menuName}]];//请输入菜单名
+        var input_menuUsName_i18n = [[#{sys.menu.edit.input.menuUsName}]];//请输入英文名
+        var select_menuType_i18n = [[#{sys.menu.edit.select.menuType}]];//请选择菜单类型
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhangbaohpu.springboot.module.system.mapper.RoleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="RoleResultMap" type="com.zhangbaohpu.springboot.module.system.entity.Role">
+        <id column="id" property="id" />
+        <result column="remarks" property="remarks" />
+        <result column="create_by" property="createBy" />
+        <result column="create_date" property="createDate" />
+        <result column="update_by" property="updateBy" />
+        <result column="update_date" property="updateDate" />
+        <result column="del_flag" property="delFlag" />
+        <result column="name" property="name" />
+        <result column="name_us" property="nameUs" />
+        <result column="type" property="type" />
+        <result column="org_id" property="orgId" />
+        <result column="is_sys" property="isSys" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Role_Column_List">
+        remarks,
+        create_by,
+        create_date,
+        update_by,
+        update_date,
+        del_flag,
+        id, name, name_us, type, org_id, is_sys, status
+    </sql>
+
+</mapper>
